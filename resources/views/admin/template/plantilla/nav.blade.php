@@ -84,7 +84,7 @@
                         </li>
 
                          <li>
-                            <a href="#">Gestione Usuarios<span class="fa arrow"></span> </span></a>
+                            <a href="#">Gestione Usuarios<span class="fa arrow"></span> </a>
                             <ul class="nav nav-second-level">
                                
                                 <li>
@@ -104,7 +104,7 @@
                             <a href="#">Gestionar Sedes<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Sedes</a>
+                                    <a href="{!! url('admin/sede') !!}">Sedes</a>
                                 </li>
                                 
                             </ul>
@@ -114,7 +114,7 @@
                             <a href="#">Gestione Salones<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Salon</a>
+                                    <a href="{!! url('admin/salon') !!}">Salon</a>
                                 </li>
                                 
                             </ul>
@@ -125,6 +125,9 @@
                             <a href="#">Gestione Cursos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                
+                                <li>
+                                    <a href="{!! url('admin/clase') !!}">Clases</a>
+                                </li>
                                 <li>
                                     <a href="grid.html">Cursos</a>
                                 </li>

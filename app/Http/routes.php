@@ -23,4 +23,11 @@ Route::resource('users', 'UsersController');
 
 });
 
+Route::get('/admin/sede','SedeController@index');
+Route::post('admin/sede','SedeController@store');
+Route::get('/admin/salon','salonController@index');
+Route::post('/admin/salon','salonController@store');
+Route::get('/admin/clase','ClaseController@index');
+Route::post('/clase/admin','ClaseController@store');
+
 
