@@ -16,18 +16,56 @@ Route::get('/', function () {
 
 });
 
+//Grupo de rutas para registrar usuarios por roles
     
 Route::group( ['prefix' => 'admin'], function(){
 
 Route::resource('users', 'UsersController');
+Route::get('users/{id}/destroy',[
+            'uses' => 'UsersController@destroy',
+            'as' => 'admin.users.destroy'
+
+]);
 
 });
 
-Route::get('/admin/sede','SedeController@index');
-Route::post('admin/sede','SedeController@store');
-Route::get('/admin/salon','salonController@index');
-Route::post('/admin/salon','salonController@store');
-Route::get('/admin/clase','ClaseController@index');
-Route::post('/clase/admin','ClaseController@store');
+//grupo de rutas de los cursos
+
+Route::group( ['prefix' => 'admin'], function(){
+Route::resource('cursos', 'CursosController');
+
+});
+
+//Grupo de rutas para los docentes
+
+Route::group( ['prefix' => 'admin'], function(){
+Route::resource('docentes', 'DocentesController');
+
+
+});
+
+//Grupo de rutas para Estudiantes
+
+Route::group( ['prefix' => 'admin'], function(){
+Route::resource('estudiantes', 'EstudiantesController');
+
+});
+
+//Grupo de rutas para los Salones
+
+Route::group( ['prefix' => 'admin'], function(){
+Route::resource('salones', 'SalonesController');
+
+
+});
+
+//Grupo de rutas para las sedes
+
+Route::group( ['prefix' => 'admin'], function(){
+Route::resource('sedes', 'SedesController');
+
+});
+
+
 
 

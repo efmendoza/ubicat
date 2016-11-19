@@ -1,0 +1,8 @@
+@extends('admin.template.plantilla.nav')
+
+@section('title', 'Registrar Estudiantes')
+@section('content')
+
+
+
+@endsection

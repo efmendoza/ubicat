@@ -1,7 +1,7 @@
 
-@extends('admin.template.main')
+@extends('admin.template.plantilla.nav')
 
-@section('title', 'Crear Usuario')
+@section('title', 'Registrar Usuario')
 @section('content')
 
 

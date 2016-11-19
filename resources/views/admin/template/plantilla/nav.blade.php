@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>UbicaT</title>
+    <title>@yield('title', 'Default')</title>
 
     <!-- Bootstrap Core CSS -->
      <link rel="stylesheet" type="text/css" href="{{asset('plantilla/bootstrap/css/bootstrap.css')}}">
@@ -25,7 +25,7 @@
 
     <!-- Custom Fonts -->
 
- <link rel="stylesheet" href="{{asset('plantilla/menus/vendor/font-awesome/css/font-awesome.min.css')}}">
+ <link rel="stylesheet" href="{{asset('plantilla/menus/vendore/font-awesome/css/font-awesome.min.css')}}">
    
 
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -75,6 +75,8 @@
             </ul>
             <!-- /.navbar-top-links -->
 
+        
+
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -84,17 +86,17 @@
                         </li>
 
                          <li>
-                            <a href="#">Gestione Usuarios<span class="fa arrow"></span> </a>
+                            <a href="#">Gestione Usuarios<span class="fa arrow"></span> </span></a>
                             <ul class="nav nav-second-level">
                                
                                 <li>
-                                    <a href="grid.html">Usuarios</a>
+                                    <a href="http://localhost/ubicaT/public/admin/users">Usuarios</a>
                                 </li>
                                 <li>
-                                    <a href="grid.html">Docentes</a>
+                                    <a href="http://localhost/ubicaT/public/admin/docentes">Docentes</a>
                                 </li>
                                 <li>
-                                    <a href="grid.html">Estudiantes</a>
+                                    <a href="http://localhost/ubicaT/public/admin/estudiantes">Estudiantes</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -104,7 +106,7 @@
                             <a href="#">Gestionar Sedes<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{!! url('admin/sede') !!}">Sedes</a>
+                                    <a href="http://localhost/ubicaT/public/admin/sedes">Sedes</a>
                                 </li>
                                 
                             </ul>
@@ -114,7 +116,7 @@
                             <a href="#">Gestione Salones<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{!! url('admin/salon') !!}">Salon</a>
+                                    <a href="http://localhost/ubicaT/public/admin/salones">Salon</a>
                                 </li>
                                 
                             </ul>
@@ -126,15 +128,12 @@
                             <ul class="nav nav-second-level">
                                
                                 <li>
-                                    <a href="{!! url('admin/clase') !!}">Clases</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Cursos</a>
+                                    <a href="http://localhost/ubicaT/public/admin/cursos/create">Cursos</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                       
+                                          
                        
                     </ul>
                 </div>
@@ -144,14 +143,21 @@
         </nav>
 
         <div id="page-wrapper">
+
+       
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">UbicaT</h1>
+                   <!-- <h1 class="page-header">UbicaT</h1>-->
                 </div>
-                <!-- /.col-lg-12 -->
+              
             </div>
             <!-- /.row -->
-           aqui debde de ir la tabla
+            <div class="panel-body">
+
+            @include('flash::message')
+            @yield('content')
+ 
+            </div>
           
         </div>
         <!-- /#page-wrapper -->
@@ -181,7 +187,7 @@
     <script src="{{asset('plantilla/bootstrap/js/bootstrap.js')}}"></script>
    
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="{{asset('plantilla/menus/vendor/metisMenu/metisMenu.min.js')}}"></script>
+    <script src="{{asset('plantilla/menus/vendore/metisMenu/metisMenu.min.js')}}"></script>
 
     <!-- Custom Theme JavaScript -->
      <script src="{{asset('plantilla/menus/dist/js/sb-admin-2.js')}}"></script>
