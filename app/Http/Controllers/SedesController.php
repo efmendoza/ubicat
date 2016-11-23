@@ -83,7 +83,9 @@ class SedesController extends Controller
     {
         $sede = Sede::find($id);
         $sede->nombre_sede = $request->nombre_sede;
-        $sede->ubicacion = $request->ubicacion;
+
+        $sede->latitud=$request->latitud;
+        $sede->longitud=$request->longitud;
         $sede->save();
 
         Flash::warning('La sede ' . $sede->nombre_sede . ' ha sido editada con exito!');

@@ -12,8 +12,12 @@
 </div>
 
 <div class="form-group">
-	{!! Form::label('ubicacion', 'Ubicacion de la sede')!!}
-	{!! Form::text('ubicacion', $sede->ubicacion, ['class' => 'form-control', 'placeholder' => 'Ingrese ubicacion de la sede', 'required'])!!}
+	{!! Form::label('latitud', 'Latitud de la sede')!!}
+	{!! Form::text('latitud', $sede->latitud, ['class' => 'form-control', 'placeholder' => 'Ingrese la latitud de la sede', 'required'])!!}
+</div>
+<div class="form-group">
+	{!! Form::label('longitud', 'longitud de la sede')!!}
+	{!! Form::text('longitud', $sede->longitud, ['class' => 'form-control', 'placeholder' => 'longitud', 'required'])!!}
 </div>
 
 <div class="form-group">

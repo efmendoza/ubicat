@@ -11,7 +11,8 @@
 	<thead>
 		<th>ID</th>
 		<th>Nombre Sede</th>
-		<th>Ubicacion</th>
+		<th>Latitud</th>
+		<th>Longitud</th>
 		<th>Accion</th>
 	</thead>
 
@@ -20,7 +21,8 @@
 <tr>
 	<td>{{ $sede->id}}</td>
 	<td>{{ $sede->nombre_sede}}</td>
-	<td>{{ $sede->ubicacion}}</td>
+	<td>{{ $sede->latitud}}</td>
+	<td>{{ $sede->longitud}}</td>
 	
 	
 <td>

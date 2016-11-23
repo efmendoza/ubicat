@@ -8,5 +8,5 @@ class Sede extends Model
 {
      protected $table = "Sedes";
 
-     protected $fillable = ['nombre_sede', 'ubicacion'];
+     protected $fillable = ['nombre_sede', 'latitud','longitud'];
 }

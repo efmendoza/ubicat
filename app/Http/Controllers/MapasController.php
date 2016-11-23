@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Sede;
 use Illuminate\Http\Request;
 use GeneaLabs\Phpgmaps\Facades\PhpgmapsFacade as Gmaps;
 
@@ -91,7 +92,32 @@ class MapasController extends Controller
      */
     public function show($id)
     {
+        $sede = Sede::where('id', '=', $id)->firstOrFail();
+
+        $config = array();
+        $config['apiKey'] = 'AIzaSyDkx6UVjmqocv8vsd9GHvbFWJOUXTbg38U';
+        $config['center'] = $sede->latidud.','.$sede->longitud;
+        $config['map_width'] = 550;
+        $config['map_height'] = 550;
+        $config['zoom'] = 'auto';
+
+
+        Gmaps::initialize($config);
+        // Colocar el marcador
+
+        $marker = array();
+        $marker['position']=$sede->latidud.','.$sede->longitud;;
+        $marker['infowindow_content'] = 'Sede '.$sede->nombre_sede;
+        Gmaps::add_marker($marker);
+
+
+        $map = Gmaps::create_map();
+
+        //Devolver vista con datos del mapa
+        return view('/mapa', compact('map'));
         //
+
+
     }
 
     /**

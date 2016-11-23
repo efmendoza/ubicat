@@ -15,7 +15,8 @@ class AddSedesTable extends Migration
         Schema::create('sedes', function (Blueprint $table) {
             $table->increments('id');
             $table->String('nombre_sede');
-            $table->String('ubicacion');
+            $table->String('latitud');
+            $table->String('longitud');
             $table->timestamps();
         });
     }
