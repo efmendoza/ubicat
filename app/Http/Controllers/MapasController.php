@@ -130,7 +130,40 @@ class MapasController extends Controller
     {
         //
     }
+    public function ruta($id)
+    {
 
+        $sede = Sede::where('id', '=', $id)->firstOrFail();
+
+        $config = array();
+        $config['apiKey'] = 'AIzaSyDkx6UVjmqocv8vsd9GHvbFWJOUXTbg38U';
+        $config['center'] = 'auto';
+        $config['map_width'] = 550;
+        $config['map_height'] = 550;
+        $config['zoom'] = 'auto';
+        $config['onboundschanged'] = 'if (!centreGot) {
+            var mapCentre = map.getCenter();
+            marker_0.setOptions({
+                position: new google.maps.LatLng(mapCentre.lat(), mapCentre.lng())
+
+            });
+        }
+        centreGot = true;';
+
+
+        $config['directions'] = TRUE;
+        $config['directionsStart'] = 'auto';
+        $config['directionsEnd'] = $sede->latidud.','.$sede->longitud;
+        $config['directionsDivID'] = 'directionsDiv';
+
+        Gmaps::initialize($config);
+
+
+        //Devolver vista con datos del mapa*/
+        $map = Gmaps::create_map();
+        return view('/layouts/ubicacion', compact('map'));
+
+    }
     /**
      * Update the specified resource in storage.
      *
