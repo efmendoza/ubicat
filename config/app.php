@@ -154,7 +154,7 @@ return [
 
 
         */
-
+        'GeneaLabs\Phpgmaps\PhpgmapsServiceProvider'
        
 
 
@@ -207,7 +207,8 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-        'Flash' => Laracasts\Flash\Flash::class
+        'Flash' => Laracasts\Flash\Flash::class,
+        'Gmaps' => 'GeneaLabs\Phpgmaps\Facades\PhpgmapsFacade'
 
     ],
 

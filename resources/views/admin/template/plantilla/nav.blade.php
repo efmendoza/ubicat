@@ -11,6 +11,7 @@
     <meta name="author" content="">
 
     <title>@yield('title', 'Default')</title>
+    @yield('maps')
 
     <!-- Bootstrap Core CSS -->
      <link rel="stylesheet" type="text/css" href="{{asset('plantilla/bootstrap/css/bootstrap.css')}}">
@@ -86,7 +87,7 @@
                         </li>
 
                          <li>
-                            <a href="#">Gestione Usuarios<span class="fa arrow"></span> </span></a>
+                            <a href="#">Gestione Usuarios<span class="fa arrow"></span> </a>
                             <ul class="nav nav-second-level">
                                
                                 <li>

@@ -66,6 +66,7 @@ Route::resource('sedes', 'SedesController');
 
 });
 
+Route::get('mapas','MapasController@index');
 
 
 
