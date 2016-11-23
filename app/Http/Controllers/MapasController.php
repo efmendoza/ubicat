@@ -12,55 +12,44 @@ use App\Http\Controllers\Controller;
 class MapasController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra la ubicación de todas las sedes.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
         //
+        $sedes = Sede::all();
+
+
         $config = array();
         $config['apiKey'] = 'AIzaSyDkx6UVjmqocv8vsd9GHvbFWJOUXTbg38U';
-        $config['center'] = '3.3983751,-76.5504763';
-        $config['map_width'] = 550;
+        $config['center'] = 'auto';
+        $config['map_width'] =550;
         $config['map_height'] = 550;
         $config['zoom'] = 'auto';
-        /*$config['onboundschanged'] = 'if (!centreGot) {
-            var mapCentre = map.getCenter();
-            marker_0.setOptions({
-                position: new google.maps.LatLng(mapCentre.lat(), mapCentre.lng())
 
-            });
-        }
-        centreGot = true;';
 
-        */
 
         Gmaps::initialize($config);
         // Colocar el marcador
 
-        $marker = array();
-        $marker['position']='3.4703934,-76.5274137';
-        $marker['infowindow_content'] = 'Sede Norte';
-        Gmaps::add_marker($marker);
-        $marker = array();
-        $marker['position']='3.3328657,-76.5246944';
-        $marker['infowindow_content'] = 'Sede Sur';
-        Gmaps::add_marker($marker);
-        $marker = array();
-        $marker['position']='3.465817,-76.5251922';
-        $marker['infowindow_content'] = 'Avenida estación 1(Centro de idiomas)';
-        Gmaps::add_marker($marker);
-        $marker = array();
-        $marker['position']='3.4663838,-76.5254605';
-        $marker['infowindow_content'] = 'Avenida estación 2';
-        Gmaps::add_marker($marker);
+        foreach ($sedes as $sede) {
+            $position=$sede->latitud.','.$sede->longitud;
+            $marker = array();
+            $marker['position']=$position;
+            $marker['infowindow_content'] = 'Sede '.$sede->nombre_sede;
+            Gmaps::add_marker($marker);
+        }
 
 
         $map = Gmaps::create_map();
 
         //Devolver vista con datos del mapa
-        return view('/mapa/ubicacion', compact('map'));
+        return view('/mapa', compact('map'));
+
+        //return $position;
+        //
     }
 
     /**
@@ -85,13 +74,16 @@ class MapasController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Muestra la ubicación de una sede.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function show($id)
     {
+
+
         $sede = Sede::where('id', '=', $id)->firstOrFail();
 
         $position=$sede->latitud.','.$sede->longitud;
@@ -131,6 +123,12 @@ class MapasController extends Controller
     {
         //
     }
+    /**
+     * Muestra la ruta hacia una sede
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function ruta($id)
     {
 
