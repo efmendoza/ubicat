@@ -94,10 +94,11 @@ class MapasController extends Controller
     {
         $sede = Sede::where('id', '=', $id)->firstOrFail();
 
+        $position=$sede->latitud.','.$sede->longitud;
         $config = array();
         $config['apiKey'] = 'AIzaSyDkx6UVjmqocv8vsd9GHvbFWJOUXTbg38U';
-        $config['center'] = $sede->latidud.','.$sede->longitud;
-        $config['map_width'] = 550;
+        $config['center'] = $position;
+        $config['map_width'] =550;
         $config['map_height'] = 550;
         $config['zoom'] = 'auto';
 
@@ -106,7 +107,7 @@ class MapasController extends Controller
         // Colocar el marcador
 
         $marker = array();
-        $marker['position']=$sede->latidud.','.$sede->longitud;;
+        $marker['position']=$position;
         $marker['infowindow_content'] = 'Sede '.$sede->nombre_sede;
         Gmaps::add_marker($marker);
 
@@ -134,7 +135,7 @@ class MapasController extends Controller
     {
 
         $sede = Sede::where('id', '=', $id)->firstOrFail();
-
+        $position=$sede->latitud.','.$sede->longitud;
         $config = array();
         $config['apiKey'] = 'AIzaSyDkx6UVjmqocv8vsd9GHvbFWJOUXTbg38U';
         $config['center'] = 'auto';
@@ -153,7 +154,7 @@ class MapasController extends Controller
 
         $config['directions'] = TRUE;
         $config['directionsStart'] = 'auto';
-        $config['directionsEnd'] = $sede->latidud.','.$sede->longitud;
+        $config['directionsEnd'] = $position;
         $config['directionsDivID'] = 'directionsDiv';
 
         Gmaps::initialize($config);
@@ -161,7 +162,7 @@ class MapasController extends Controller
 
         //Devolver vista con datos del mapa*/
         $map = Gmaps::create_map();
-        return view('/layouts/ubicacion', compact('map'));
+        return view('/mapa', compact('map'));
 
     }
     /**
