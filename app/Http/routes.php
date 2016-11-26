@@ -12,9 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->to('admin/usuarios/login');
 
 });
+
 
 //Grupo de rutas para registrar usuarios por roles
     
@@ -65,8 +66,15 @@ Route::group( ['prefix' => 'admin'], function(){
 Route::resource('sedes', 'SedesController');
 
 });
+Route::group( ['prefix' => 'admin'], function() {
+    Route::resource('login', 'Auth\AuthController');
+});
+Route::get('admin/mapa/ubicacion/{id}','MapasController@ruta');
+Route::get('admin/mapa/ubicacion','MapasController@index');
 
-Route::get('mapas','MapasController@index');
-
-
+Route::get('admin/usuarios/login','UsuariosController@index');
+Route::post('admin/usuarios/login','UsuariosController@verificar');
+Route::get('admin/usuarios/usuario','UsuariosController@show');
+Route::get('admin/mapa/ubicacion/sede/{id}','MapasController@show');
+Route::post('admin/login','AuthController@verificar');
 

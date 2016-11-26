@@ -11,7 +11,7 @@
     <meta name="author" content="">
 
     <title>@yield('title', 'Default')</title>
-
+@yield('header')
     <!-- Bootstrap Core CSS -->
      <link rel="stylesheet" type="text/css" href="{{asset('plantilla/bootstrap/css/bootstrap.css')}}">
 
@@ -66,7 +66,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>-->
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Salir</a>
+                        <li><a href="{!! url('admin/usuarios/login') !!}"><i class="fa fa-sign-out fa-fw"></i> Salir</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -84,14 +84,23 @@
                         <li>
                             <a href="#"><h4>Menu</h4></a>
                         </li>
-                                              
-                                                                                            
+
                         <li>
-                            <a href="#">Gestione Cursos<span class="fa arrow"></span></a>
+                            <a href="#">Cursos<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+
+                                <li>
+                                    <a href="{!! url('admin/usuarios/usuario') !!}">Todos los cursos</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#">Mapas<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                
                                 <li>
-                                    <a href="http://localhost/ubicaT/public/admin/cursos/create">Cursos</a>
+                                    <a href="{!! url('admin/mapa/ubicacion') !!}">Mapas de todas las sedes</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

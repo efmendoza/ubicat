@@ -15,7 +15,7 @@ class AddCursosTable extends Migration
         Schema::create('cursos', function (Blueprint $table) {
             $table->increments('id');
             $table->String('nombre_curso');  
-            $table->Integer('id_salon')->unsigned();
+            $table->Integer('id_clase')->unsigned();
             $table->Integer('id_docente')->unsigned(); 
 
             $table->foreign('id_salon')->references('id')->on('salones');

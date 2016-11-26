@@ -8,5 +8,12 @@ class Curso extends Model
 {
     protected $table = "Cursos";
 
-    protected $fillable = ['nombre_curso', ' id_salon', 'id_docente'];
+    protected $fillable = ['nombre_curso', ' id_clase', 'id_docente'];
+
+
+    public function estudiante()
+    {
+        //hasmany - tiene muchas
+        return $this->hasmany(Estudiante::class);
+    }
 }

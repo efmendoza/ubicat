@@ -11,7 +11,7 @@
     <meta name="author" content="">
 
     <title>@yield('title', 'Default')</title>
-    @yield('maps')
+@yield('header')
 
     <!-- Bootstrap Core CSS -->
      <link rel="stylesheet" type="text/css" href="{{asset('plantilla/bootstrap/css/bootstrap.css')}}">
@@ -67,7 +67,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>-->
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Salir</a>
+                        <li><a href="{!! url('admin/usuarios/login') !!}"><i class="fa fa-sign-out fa-fw"></i> Salir</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->

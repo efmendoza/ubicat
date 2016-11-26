@@ -40,24 +40,37 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Inicio de sesion</h3>
+                        <h3 class="panel-title">Ingreso</h3>
                     </div>
+                   @if(!$errors->isEmpty())
+                    <div class="alert alert-danger">
+                        <p><strong>¡Ups!</strong>Por favor corrija los siguientes errores</p>
+                        <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{!! $error !!}</li>
+                        @endforeach
+                        </ul>
+                    </div>
+                    @endif
                     <div class="panel-body">
-                        <form role="form" method="post" action="{!! url('admin/login') !!}">
+                        <form role="form" method="post" action="{!! url('admin/usuarios/login') !!}">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                             <fieldset>
+
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                    <input class="form-control" placeholder="E-mail" name="correo" type="email" autofocus>
                                 </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
-                                </div>
-                                <div class="checkbox">
+
+                               <!-- <div class="checkbox">
                                     <label>
                                         <input name="remember" type="checkbox" value="Remember Me">Recordar Contraseña
                                     </label>
-                                </div>
+                                </div>-->
                                 <!-- Change this to a button or input when using this as a form -->
-                                <button class="btn btn-lg btn-success btn-block">Ingresar</button>
+                                <button type="submit" class="btn btn-primary">
+                                    Ingresar
+                                </button> <a href="http://localhost/ubicaT/public/admin/login" style="float: right ">Administrador</a>
                             </fieldset>
                         </form>
                     </div>

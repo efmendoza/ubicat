@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Sede;
 use Illuminate\Http\Request;
 use GeneaLabs\Phpgmaps\Facades\PhpgmapsFacade as Gmaps;
-
+use Mail;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -24,10 +24,10 @@ class MapasController extends Controller
 
         $config = array();
         $config['apiKey'] = 'AIzaSyDkx6UVjmqocv8vsd9GHvbFWJOUXTbg38U';
-        $config['center'] = 'auto';
+        $config['center'] = '3.405966,-76.533305';
         $config['map_width'] =550;
         $config['map_height'] = 550;
-        $config['zoom'] = 'auto';
+        $config['zoom'] = '12';
 
 
 
@@ -46,7 +46,7 @@ class MapasController extends Controller
         $map = Gmaps::create_map();
 
         //Devolver vista con datos del mapa
-        return view('/mapa', compact('map'));
+        return view('admin/mapa/ubicacion', compact('map'));
 
         //return $position;
         //
@@ -107,7 +107,7 @@ class MapasController extends Controller
         $map = Gmaps::create_map();
 
         //Devolver vista con datos del mapa
-        return view('/mapa', compact('map'));
+        return view('admin/mapa/ubicacion', compact('map'));
         //
 
 
@@ -160,7 +160,7 @@ class MapasController extends Controller
 
         //Devolver vista con datos del mapa*/
         $map = Gmaps::create_map();
-        return view('/mapa', compact('map'));
+        return view('admin/mapa/ubicacion', compact('map'));
 
     }
     /**
