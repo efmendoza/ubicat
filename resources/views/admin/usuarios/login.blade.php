@@ -41,6 +41,7 @@
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Ingreso</h3>
+                        
                     </div>
                    @if(!$errors->isEmpty())
                     <div class="alert alert-danger">

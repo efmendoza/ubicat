@@ -23,6 +23,20 @@ class UsersController extends Controller
         return view('admin.users.index')->with('users', $users);
     }
 
+      public function verificar(Request $request)
+    {
+        $this->validate($request,[
+            'email'=>['required','exists:users,email']
+        ]);
+        $this->validate($request,[
+            'password'=>['required','exists:users,password']
+        ]);
+
+
+       // $estudiante =Estudiante ::where('correo', '=', $request->email)->firstOrFail();
+        //
+      return redirect()->to('admin/users/index');
+    }
     /**
      * Show the form for creating a new resource.
      *

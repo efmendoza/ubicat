@@ -78,3 +78,8 @@ Route::get('admin/usuarios/usuario','UsuariosController@show');
 Route::get('admin/mapa/ubicacion/sede/{id}','MapasController@show');
 Route::post('admin/login','AuthController@verificar');
 
+
+Route::get('admin/template/plantilla/login','UsersController@index');
+Route::post('admin/template/plantilla/login','UsersController@verificar');
+
+

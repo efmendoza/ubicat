@@ -40,11 +40,24 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Inicio de sesion</h3>
+                        <h3 class="panel-title">Ingreso</h3>
+                        
                     </div>
+                   @if(!$errors->isEmpty())
+                    <div class="alert alert-danger">
+                        <p><strong>¡Ups!</strong>Por favor corrija los siguientes errores</p>
+                        <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{!! $error !!}</li>
+                        @endforeach
+                        </ul>
+                    </div>
+                    @endif
                     <div class="panel-body">
-                        <form role="form">
-                            <fieldset>
+                        <form role="form" method="post" action="{!! url('admin/template/plantilla/login') !!}">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
                                 </div>
@@ -81,3 +94,4 @@
 </body>
 
 </html>
+

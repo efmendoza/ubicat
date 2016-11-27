@@ -27,8 +27,8 @@
 
                 <td>
 
-                    <a href="{{url('admin/mapa/ubicacion/sede','1' )}}" class="btn btn-info"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
-                    <a href="{{url('admin/mapa/ubicacion', '1')}}" class="btn btn-info"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
+                    <a href="{{url('admin/mapa/ubicacion/sede','2' )}}" class="btn btn-info"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                    <a href="{{url('admin/mapa/ubicacion', '2')}}" class="btn btn-info"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
                 </td>
 
             </tr>
@@ -42,8 +42,8 @@
 
                 <td>
 
-                    <a href="{{url('admin/mapa/ubicacion/sede','2' )}}" class="btn btn-info"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
-                    <a href="{{url('admin/mapa/ubicacion', '2')}}" class="btn btn-info"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
+                    <a href="{{url('admin/mapa/ubicacion/sede','3' )}}" class="btn btn-info"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                    <a href="{{url('admin/mapa/ubicacion', '3')}}" class="btn btn-info"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
                 </td>
 
             </tr>
@@ -51,14 +51,14 @@
                 <td>Jueves</td>
                 <td>Ética </td>
                 <td>1011</td>
-                <td>Gonzaga</td>
+                <td>Sur</td>
                 <td>205</td>
 
 
                 <td>
 
-                    <a href="{{url('admin/mapa/ubicacion/sede','4' )}}" class="btn btn-info"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
-                    <a href="{{url('admin/mapa/ubicacion', '4')}}" class="btn btn-info"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
+                    <a href="{{url('admin/mapa/ubicacion/sede','1' )}}" class="btn btn-info"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                    <a href="{{url('admin/mapa/ubicacion', '1')}}" class="btn btn-info"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
                 </td>
 
             </tr>
@@ -72,8 +72,8 @@
 
                 <td>
 
-                    <a href="{{url('admin/mapa/ubicacion/sede','2' )}}" class="btn btn-info"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
-                    <a href="{{url('admin/mapa/ubicacion', '2')}}" class="btn btn-info"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
+                    <a href="{{url('admin/mapa/ubicacion/sede','3' )}}" class="btn btn-info"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                    <a href="{{url('admin/mapa/ubicacion', '3')}}" class="btn btn-info"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
                 </td>
 
             </tr>
